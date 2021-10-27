@@ -13,7 +13,7 @@ function App() {
     <div className="App">
     <Navbar/>
     </div>
-    <Login/>
+    {/*<Login/>*/}
     <Register/>
     </ThemeProvider>
   );

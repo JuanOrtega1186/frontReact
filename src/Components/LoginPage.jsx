@@ -9,7 +9,7 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 const Login=()=>{
 
     const paperStyle={padding :20, height :'70vh', width :280, margin:"20px auto"}
-    const avatarStyle={backgroundColor:'#1bbd7e'}
+    const avatarStyle={backgroundColor:'blue'}
     const btnstyle={margin:'8px 0'}
     
     return(
@@ -30,7 +30,7 @@ const Login=()=>{
                 </Typography>
                 <Typography> Do you have account?
                     <Link href="#">
-                            Sign Up
+                            Register
                     </Link>
                 </Typography>
             </Paper>
