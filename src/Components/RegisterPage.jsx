@@ -9,7 +9,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 const RegisterPage = () => {
-const paperStyle={padding:'30px 50px', width:300, margin:"20px auto"}
+const paperStyle={padding:'30px 50px', width:500, margin:"20px auto"}
 const headerStyle={margin:0}
 const avatarStyle={backgroundColor:'blue'}
 const marginTop = {marginTop:5}
@@ -22,25 +22,26 @@ const marginTop = {marginTop:5}
                         <Avatar style={avatarStyle}>
                           <AddCircleOutlineOutlinedIcon/>  
                         </Avatar>
-                        <h2 style={headerStyle}>Registrarse</h2>
-                        <Typography variant='caption' gutterBottom>Diligencia este formato para crear una cuenta!</Typography>
+                        <h2 style={headerStyle}>Sing Up</h2>
+                        <Typography variant='caption' gutterBottom>Please fill this form to create an account!</Typography>
                     </Grid>
                     <form>
-                        <TextField fullWidth label = 'Nombre' placeholder = 'Ingresa tu Nombre'/>
-                        <TextField fullWidth label = 'Email' placeholder = 'Ingresa tu Email'/>
-                        <TextField fullWidth label = 'Pais' placeholder = 'Ingresa tu Pais'/>
-                        <TextField fullWidth label = 'Ciudad' placeholder = 'Ingresa tu Ciudad'/>
-                        <TextField fullWidth label = 'Contraseña' placeholder = 'Ingresa tu Contraseña'/>
+                        <TextField fullWidth label = 'Name' placeholder = 'Insert your name'/>
+                        <TextField fullWidth label = 'Email' placeholder = 'Insert your email address'/>
+                        <TextField fullWidth label = 'Country' placeholder = 'Insert your Country'/>
+                        <TextField fullWidth label = 'City' placeholder = 'Insert your City'/>
+                        <TextField fullWidth label = 'Password' type ="password" placeholder = 'Insert your password'/>
                         <FormControl component="fieldset" style = {marginTop}>
-                        <FormLabel component="legend">Perfil</FormLabel>
-                            <RadioGroup aria-label="perfil" name="perfil" style={{display:'initial'}}>
-                                <FormControlLabel value="dueño" control={<Radio />} label="Dueño" />
-                                <FormControlLabel value="comprador" control={<Radio />} label="Comprador" />
+                        <FormLabel component="legend">Profile</FormLabel>
+                            <RadioGroup aria-label="profile" name="profile" style={{display:'initial'}}>
+                                <FormControlLabel value="owner" control={<Radio />} label="Owner" />
+                                <FormControlLabel value="buyer" control={<Radio />} label="Buyer" />
                             </RadioGroup>
+                        <TextField fullWidth label = 'Shopname' placeholder = 'Insert your Shop Name'/>
                         </FormControl>
                         <FormControlLabel control={<Checkbox name="checkedA" />} 
-                        label="Acepto Terminos y Condiciones."/>
-                        <Button type = 'submit' variant='contained' color = 'primary'>Registrar</Button>
+                        label="I accept Terms and Conditions."/>                 
+                        <Button type = 'submit' variant='contained' color = 'primary' fullWidth>Sing Up</Button>
                     </form>
                 </Paper>
             </Grid>

@@ -3,6 +3,7 @@ import {AppBar, Toolbar, Typography, makeStyles, IconButton, Button, Link} from 
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import { NavLink } from 'react-router-dom';
 
 
 const useStyles = makeStyles(theme=>({
@@ -27,14 +28,16 @@ const Navbar = () => {
                       <MenuOpenIcon/>
                   </IconButton>
                 <Typography variant="h6" className={classes.title}>
-                  Camelshop
+                    <NavLink to="/">
+                        Camelshop
+                    </NavLink>
                 </Typography>
-                <Link href="./Components/LoginPage">
+                <NavLink to = "/login">
                     <Button variant="contained" color="primary" startIcon={<AccountCircleIcon/>}>Login</Button>
-                </Link>
-                <Link href="./Components/RegisterPage">
+                </NavLink>
+                <NavLink to = "/register">
                     <Button variant="contained" color="secondary" startIcon={<PersonAddIcon/>}>Register</Button>
-                </Link>
+                </NavLink>
               </Toolbar>
             </AppBar>
             <div className={classes.offset}></div>

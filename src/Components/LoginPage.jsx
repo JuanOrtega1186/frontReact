@@ -6,6 +6,8 @@ import Checkbox from '@material-ui/core/Checkbox';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 
+
+
 const Login=()=>{
 
     const paperStyle={padding :20, height :'70vh', width :280, margin:"20px auto"}
@@ -29,7 +31,7 @@ const Login=()=>{
                     </Link>
                 </Typography>
                 <Typography> Do you have account?
-                    <Link href="#">
+                    <Link href = "/register">
                             Register
                     </Link>
                 </Typography>
