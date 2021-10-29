@@ -15,7 +15,7 @@ const avatarStyle={backgroundColor:'blue'}
 const marginTop = {marginTop:5}
 
     return (
-        <div>
+        <div className = "container-fluid">
             <Grid>
                 <Paper elevation={20} style={paperStyle}>
                     <Grid align='center'>
