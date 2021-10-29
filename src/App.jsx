@@ -9,9 +9,6 @@ import theme from './temaConfg';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  NavLink
 } from "react-router-dom";
 
 function App() {
@@ -28,7 +25,7 @@ function App() {
             <Router path="/register" exact>
               <Register/>
             </Router>
-            <Router path="/" exact>
+            <Router path="" exact>
               <HomePage/>
             </Router>
           </Switch>        
