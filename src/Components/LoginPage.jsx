@@ -20,7 +20,7 @@ export default function Login(){
 
     const [detal, setDetal] = useState([])
     const [email, setEmail] = useState('')
-    const [logged, setlogged] = useState(false) 
+    
 
     console.log(email)
 
@@ -42,9 +42,8 @@ export default function Login(){
 
       const validator = () => {
 
-       // localStorage.setItem("logged", true);
-          setlogged(localStorage.getItem('logged') !==  null ? true : false)
-          console.log(logged)
+       localStorage.setItem("logged", true);
+          
       }
      
 
