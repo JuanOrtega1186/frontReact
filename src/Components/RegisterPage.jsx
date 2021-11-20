@@ -9,7 +9,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
 import Swal from 'sweetalert2'
-import {urlGuardar, urlhome} from '../service/url'
+import {urlGuardar} from '../service/url'
 
 const RegisterPage = () => {
 const paperStyle={padding:'30px 50px', width:500, margin:"20px auto"}
@@ -17,15 +17,21 @@ const headerStyle={margin:0}
 const avatarStyle={backgroundColor:'blue'}
 const marginTop = {marginTop:5}
 
-const [detal, setDetal] = useState([])
+
+
+//const [detal, setDetal] = useState([])
 const [name, setName] = useState('')
 const [email, setEmail] = useState('')
 const [country, setCountry] = useState('')
 const [city, setCity] = useState('')
 const [passWord, setPassword] = useState('')
+const [profile, setProfile] = useState('')
 const [shop, setShop] = useState('')
 
+
+
 const register = () =>{
+    debugger
     if(!name || !email || !country || !city || !passWord){
         Swal.fire({
             title: 'Warning!',
@@ -34,7 +40,6 @@ const register = () =>{
             confirmButtonText: 'Cool'
         })
     }else{
-        let profile = ('')
         let body = {
             name: name,
             email: email,
@@ -48,10 +53,9 @@ const register = () =>{
     
         .then(res => {
             // eslint-disable-next-line no-lone-blocks
-            { Object.entries(res.data).length !== 0 && validator(res.data) }
+            { Object.entries(res.data).length !== 0 && warning(res.data) }
         }).catch(
             function(error) {
-                debugger
                 Swal.fire({
                     title: 'error!',
                     text: error,
@@ -62,17 +66,17 @@ const register = () =>{
         )
     }
 
-    const validator = (message) => {
+
+    const warning = (message) => {
         Swal.fire({
             title: 'Mensaje!',
             text: message.message,
             icon: message.icon,
-            confirmButtonText: 'Cool'
+            confirmButtonText: 'Warning'
           })
     }
 
-    const warning = (data) => {
-        debugger
+/*     const validator = (data) => {
         if(data[0].email != null)
         {
 
@@ -82,12 +86,9 @@ const register = () =>{
             console.log(datos)
             window.location.href= urlhome
         }else {
-            warning(data)
+            validator(data)
         }
-       
-       
-        
-    }
+    } */
 }
 
     return (
@@ -110,8 +111,8 @@ const register = () =>{
                         <FormControl component="fieldset" style = {marginTop}>
                         <FormLabel component="legend">Profile</FormLabel>
                             <RadioGroup aria-label="profile" name="profile" style={{display:'initial'}}>
-                                <FormControlLabel value="owner"  control={<Radio />} label="Owner" />
-                                <FormControlLabel value="buyer"  control={<Radio />} label="Buyer" />
+                                <FormControlLabel value= "true" onChange={(e)=>setProfile(e.target.value)} control={<Radio />} label="Seller" />
+                                <FormControlLabel value= "" onChange={(e)=>setProfile(e.target.value)} control={<Radio />} label="Buyer" />
                             </RadioGroup>
                         <TextField fullWidth label = 'Shopname' onChange={(e)=>setShop(e.target.value)} placeholder = 'Insert your Shop Name'/>
                         </FormControl>
