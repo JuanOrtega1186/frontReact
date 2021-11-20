@@ -2,7 +2,8 @@ import * as React from 'react';
 import {
   makeStyles,
 } from "@material-ui/core";
-import CustomCard from "./CustomCard";
+import PerfilCard from "./PerfilCard";
+
 
 const useStyles = makeStyles((theme) => ({
   offset: theme.mixins.toolbar,
@@ -11,11 +12,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 const HomePage = () => {
+
+  
+
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <CustomCard />
+      <PerfilCard />
     </div>
   );
 };
