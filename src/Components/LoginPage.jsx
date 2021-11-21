@@ -5,7 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import axios from 'axios';
-import {urlConsultarEmail, urlSellerProfile, customerProfile} from '../service/url'
+import {urlConsultarEmail, urlSellerProfile, urlCostumerProfile} from '../service/url'
 import Swal from 'sweetalert2'
 
 
@@ -91,7 +91,7 @@ const Login = () => {
             if(data[0].profile === false)
             {
                 console.log("Cliente");
-                window.location.href= customerProfile
+                window.location.href= urlCostumerProfile
             }
             //window.location.href= urlhome
         }else{

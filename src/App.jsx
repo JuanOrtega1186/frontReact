@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar';
 import SellerProfile from './Components/SellerProfile';
 import HomePage from './Components/HomePage'
 import {ThemeProvider} from '@material-ui/styles';
+import Footer from './Components/Footer';
 
 
 import theme from './temaConfg';
@@ -40,9 +41,14 @@ function App() {
             <Router path="/customerProfile" exact>
               <CustomerProfile/>
             </Router>
-          </Switch>        
+          </Switch>    
         </div>
+        <>
+        <Footer/>  
+        </>
+        
     </Router>
+    
     </ThemeProvider>
   );
 }
