@@ -7,6 +7,7 @@ import SellerProfile from './Components/SellerProfile';
 import HomePage from './Components/HomePage'
 import {ThemeProvider} from '@material-ui/styles';
 import Footer from './Components/Footer';
+import ProductsCards from './Components/ProductsCards';
 
 
 import theme from './temaConfg';

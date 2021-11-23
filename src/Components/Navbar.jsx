@@ -1,9 +1,10 @@
 import React, {useState, useEffect}  from "react";
-import { AppBar, Toolbar, makeStyles, Button } from "@material-ui/core";
+import { AppBar, Toolbar, makeStyles, Button, Link } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import { NavLink } from "react-router-dom";
 import companyLogo from "../Assets/camelshop.png";
+import LoginPage from '../Components/LoginPage';
 
 const useStyles = makeStyles((theme) => ({
   offset: theme.mixins.toolbar,
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
   
 const Loggin = () => {
-  debugger
+  // debugger
   const classes = useStyles();
   return(
     <div id="reload">
@@ -52,14 +53,22 @@ const Loggin = () => {
   
 const Logout = (props) => {
   const loggedOut = () => {
-    debugger
+    //debugger
     localStorage.clear()
     props.callback('Hola')
-
+    
   }
   return(
     <div>
     <NavLink  to="/"> 
+    <Button
+        onClick={()=> LoginPage()}
+        variant="contained"
+        color="primary"
+      >
+        Profile
+        
+      </Button>
       <Button
         onClick={()=> loggedOut()}
         variant="contained"
@@ -68,7 +77,7 @@ const Logout = (props) => {
       >
         Logout
         
-      </Button>
+      </Button> 
     </NavLink>
   </div>
   )

@@ -31,7 +31,7 @@ const [shop, setShop] = useState('')
 
 
 const register = () =>{
-    debugger
+    //debugger
     if(!name || !email || !country || !city || !passWord){
         Swal.fire({
             title: 'Warning!',

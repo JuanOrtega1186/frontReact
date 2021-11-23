@@ -5,6 +5,8 @@ import {
 import PerfilCard from "./PerfilCard";
 
 
+
+
 const useStyles = makeStyles((theme) => ({
   offset: theme.mixins.toolbar,
   container: {
@@ -22,6 +24,7 @@ const HomePage = () => {
   return (
     <div className={classes.container}>
       <PerfilCard />
+      
     </div>
   );
 };

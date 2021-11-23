@@ -32,7 +32,7 @@ const PerfilCard = () => {
   }, [])
 
   const getSellers = () => {
-    debugger
+    //debugger
     axios.get(urlListSellers + 'sellerprofile')
     .then(res => {
       setResp(res.data)
