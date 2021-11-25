@@ -4,7 +4,8 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import { NavLink } from "react-router-dom";
 import companyLogo from "../Assets/camelshop.png";
-import LoginPage from '../Components/LoginPage';
+import CustomerProfile from "../Components/CustomerProfile";
+
 
 const useStyles = makeStyles((theme) => ({
   offset: theme.mixins.toolbar,
@@ -62,7 +63,7 @@ const Logout = (props) => {
     <div>
     <NavLink  to="/"> 
     <Button
-        onClick={()=> LoginPage()}
+        onClick={()=> CustomerProfile()}
         variant="contained"
         color="primary"
       >
