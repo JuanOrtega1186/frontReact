@@ -9,7 +9,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
 import Swal from 'sweetalert2'
-import {urlGuardar} from '../service/url'
+import {urlCreateUser} from '../../service/url'
 
 const RegisterPage = () => {
 const paperStyle={padding:'30px 50px', width:500, margin:"20px auto"}
@@ -31,7 +31,6 @@ const [shop, setShop] = useState('')
 
 
 const register = () =>{
-    //debugger
     if(!name || !email || !country || !city || !passWord){
         Swal.fire({
             title: 'Warning!',
@@ -49,7 +48,7 @@ const register = () =>{
             profile: profile,
             shopName: shop
         }
-        axios.post(urlGuardar + 'users', body)
+        axios.post(urlCreateUser + 'users', body)
     
         .then(res => {
             // eslint-disable-next-line no-lone-blocks
@@ -75,20 +74,6 @@ const register = () =>{
             confirmButtonText: 'Warning'
           })
     }
-
-/*     const validator = (data) => {
-        if(data[0].email != null)
-        {
-
-            setDetal(data)
-            let datos = data
-            console.log(detal)
-            console.log(datos)
-            window.location.href= urlhome
-        }else {
-            validator(data)
-        }
-    } */
 }
 
     return (

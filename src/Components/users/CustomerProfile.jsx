@@ -1,5 +1,5 @@
 import * as React from "react";
-import profileImage from "../Assets/user.svg";
+import profileImage from "../../Assets/user.svg";
 
 import { makeStyles, Card, CardContent, Typography } from "@material-ui/core";
 
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SellerProfile = () => {
+const CustomerProfile = () => {
   const classes = useStyles();
   return (
     <Card className={classes.container}>
@@ -51,11 +51,11 @@ const SellerProfile = () => {
           {localStorage.getItem("country")}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Mas contenido sobre el perfil de el vendedor
+          Mas contenido sobre el perfil de el cliente
         </Typography>
       </CardContent>
     </Card>
   );
 };
 
-export default SellerProfile;
+export default CustomerProfile;

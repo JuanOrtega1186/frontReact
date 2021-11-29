@@ -5,7 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import axios from 'axios';
-import {urlConsultarEmail, urlSellerProfile, urlCostumerProfile} from '../service/url'
+import {urlConsultarEmail, urlSellerProfile, urlCostumerProfile} from '../../service/url'
 import Swal from 'sweetalert2'
 
 
@@ -81,6 +81,7 @@ const Login = () => {
             localStorage.setItem("name", data[0].name);
             localStorage.setItem("city", data[0].city);
             localStorage.setItem("country", data[0].country);
+            localStorage.setItem("shopName", data[0].shopName);
 
             if(data[0].profile === true)
             {

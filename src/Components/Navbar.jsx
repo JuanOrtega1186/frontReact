@@ -1,10 +1,10 @@
 import React, {useState, useEffect}  from "react";
-import { AppBar, Toolbar, makeStyles, Button, Link } from "@material-ui/core";
+import { AppBar, Toolbar, makeStyles, Button } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import { NavLink } from "react-router-dom";
 import companyLogo from "../Assets/camelshop.png";
-import CustomerProfile from "../Components/CustomerProfile";
+import { urlSellerProfile, urlCostumerProfile } from "../service/url";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,9 +22,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+const goToProfile = () => {
+  if(localStorage.getItem("profile") === "true")
+  {
+    window.location.href= urlSellerProfile
+
+  }
+  else
+  {
+    window.location.href= urlCostumerProfile
+  }
+}
+
   
 const Loggin = () => {
-  // debugger
   const classes = useStyles();
   return(
     <div id="reload">
@@ -54,7 +65,6 @@ const Loggin = () => {
   
 const Logout = (props) => {
   const loggedOut = () => {
-    //debugger
     localStorage.clear()
     props.callback('Hola')
     
@@ -63,7 +73,7 @@ const Logout = (props) => {
     <div>
     <NavLink  to="/"> 
     <Button
-        onClick={()=> CustomerProfile()}
+        onClick={()=> goToProfile()}
         variant="contained"
         color="primary"
       >
