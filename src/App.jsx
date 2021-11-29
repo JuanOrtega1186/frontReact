@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import Login from './Components/LoginPage';
-import Register from './Components/RegisterPage';
+import Login from './Components/users/LoginPage';
+import Register from './Components/users/RegisterPage';
 import Navbar from './Components/Navbar';
-import SellerProfile from './Components/SellerProfile';
+import SellerProfile from './Components/users/SellerProfile';
 import HomePage from './Components/HomePage'
 import {ThemeProvider} from '@material-ui/styles';
 import Footer from './Components/Footer';
-import ProductsCards from './Components/ProductsCards';
 
 
 import theme from './temaConfg';
@@ -15,7 +14,7 @@ import {
   BrowserRouter as Router,
   Switch,
 } from "react-router-dom";
-import CustomerProfile from './Components/CustomerProfile';
+import CustomerProfile from './Components/users/CustomerProfile';
 
 function App() {
 

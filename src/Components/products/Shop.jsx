@@ -2,7 +2,7 @@ import * as React from 'react';
 import {
   makeStyles,
 } from "@material-ui/core";
-import PerfilCard from "./users/PerfilCard";
+import ProductsCard from './ProductsCards'
 
 
 
@@ -16,17 +16,14 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const HomePage = () => {
-
-  
+const Shop = () => {
 
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <PerfilCard />
-      
+      <ProductsCard/>
     </div>
   );
 };
 
-export default HomePage;
+export default Shop;
