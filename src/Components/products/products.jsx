@@ -1,15 +1,20 @@
 import React, {useState, useEffect}from 'react';
 import {Grid, Paper, Avatar, Typography, TextField, Button} from '@material-ui/core'
-import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import axios from 'axios';
 import Swal from 'sweetalert2'
-import {urlNewProduct, urlUpdateProduct} from '../../service/url'
+import {urlNewProduct, urlUpdateProduct, urlDeleteProduct} from '../../service/url'
+import DeleteIcon from '@material-ui/icons/Delete';
+import SaveIcon from '@material-ui/icons/Save';
+import ThreeSixtyIcon from '@material-ui/icons/ThreeSixty';
 
-const NewProduct = (props) => {
-const paperStyle={padding:'30px 50px', width:800, margin:"30px auto"}
+
+
+
+const ProductsComponent = (props) => {
+const paperStyle={padding:'30px 50px', width:1000, margin:"30px auto"}
 const headerStyle={margin:0}
 const avatarStyle={backgroundColor:'blue'}
-const buttonStyle={display: 'flex', margin: "20px Auto" }
+const buttonStyle={display:"flex", width:"100%", margin: "20px Auto" }
 
 //const [detal, setDetal] = useState([])
 let [_id, setId] = useState('')
@@ -21,12 +26,13 @@ const [storage, setStorage] = useState('')
 let [shopName, setShop] = useState('')
 const [data, setData] = useState();
 
+
+
+
 shopName = localStorage.getItem("shopName")
 
 
-const create = () =>{
-    
-    debugger
+const createProduct = () =>{
     if(!productBarCode || !productName || !productDescription || !price || !storage){
         Swal.fire({
             title: 'Warning!',
@@ -73,7 +79,6 @@ const create = () =>{
 }
 
 useEffect(() => {
-debugger
     setProductBarCode(props.item.productBarCode)
     setProductName(props.item.productName)
     setProductDescription(props.item.productDescription)
@@ -82,8 +87,7 @@ debugger
     console.log(props);
 }, [props.item])
 
-const update = () => {
-    debugger
+const updateProduct = () => {
     _id = (props.item._id)
     let body = 
     {
@@ -122,6 +126,27 @@ const update = () => {
 
 }
 
+const deleteProduct = () => {
+debugger
+    try {
+        axios.delete(`${urlDeleteProduct}deleteproduct/${props.item._id}`).then((res) => {
+            console.log(res.data)
+            window.location.reload(true);
+        }).catch((error) => {
+            console.error(error)
+        })
+    } catch (error) {
+        console.log(error)
+        Swal.fire({
+            title: 'Mensaje!',
+            text: error.message,
+            icon: error.icon,
+            confirmButtonText: 'Fine'
+          })
+    }
+
+}
+
 
     return (
         <div className = "container-fluid">
@@ -129,7 +154,6 @@ const update = () => {
                 <Paper elevation={20} style={paperStyle}>
                     <Grid align='center'>
                         <Avatar style={avatarStyle}>
-                          <AddCircleOutlineOutlinedIcon/>  
                         </Avatar>
                         <h2 style={headerStyle}>Products</h2>
                         <Typography variant='caption' gutterBottom>create or update your products!</Typography>
@@ -140,8 +164,20 @@ const update = () => {
                         <TextField fullWidth label = 'Description' onChange={(e)=>setProductDescription(e.target.value)} value={productDescription} />
                         <TextField fullWidth label = 'Price' onChange={(e)=>setPrice(e.target.value)} value={price} />
                         <TextField fullWidth label = 'storage' onChange={(e)=>setStorage(e.target.value)} value={storage} />
-                        <Button type = 'button' style={buttonStyle} variant='contained' onClick={()=>create()} color = 'primary' fullWidth>Create</Button>
-                        <Button type = 'button' style={buttonStyle} variant='contained' onClick={()=>update()} color = 'primary' fullWidth>Update</Button>
+                        <>
+                        <Button type = 'button' style={buttonStyle} variant='outlined' onClick={()=>createProduct()} color = 'primary' >Create
+                        <SaveIcon/>
+                        </Button>
+                        <Button type = 'button' style={buttonStyle} variant='contained' onClick={()=>updateProduct()} color = 'primary' >Update
+                        <ThreeSixtyIcon/>
+                        </Button>
+                        
+                        </>
+                        <>
+                        <Button type = 'button'  style={buttonStyle} variant="contained" color="secondary" onClick={()=>deleteProduct()} >Delete
+                            <DeleteIcon  />
+                        </Button>
+                        </>
                     </form>
                 </Paper>
             </Grid>
@@ -149,4 +185,4 @@ const update = () => {
     )
 }
 
-export default NewProduct
+export default ProductsComponent
