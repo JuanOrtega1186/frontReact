@@ -8,6 +8,7 @@ export const urlgetproductsbyshop =('http://localhost:3000/api/products/')
 export const urlNewProduct = ('http://localhost:3000/api/products/')
 export const urlUpdateProduct = ('http://localhost:3000/api/products/')
 export const urlGetProductinfo = ('http://localhost:3000/api/products/')
+export const urlDeleteProduct = ('http://localhost:3000/api/products/')
 
 
 //Url's de el Front
