@@ -7,12 +7,13 @@ import {Typography, makeStyles, Card, CardContent} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    maxWidth: '580px',
+    maxWidth: '600px',
     backgroundColor: '#39aaa8',
     margin: '30px',
+    marginLeft: '380px',
     display: 'flex',
     flexDirection: 'column',
-    borderRadius: '10px',
+    borderRadius: '20px',
     padding: '30px 50px',
     alignItems: 'center',
     boxShadow: '6px 5px 3px #9E9E9E'
@@ -20,12 +21,13 @@ const useStyles = makeStyles((theme) => ({
   card: {
     textAlign: 'center',
     paddingBottom: '0 !important',
-    color: '#fff',  
+    color: '#fff', 
   },
   logo: {
     width: '80px',
     height: '80px',
     fill: '#fff',
+    
   },
   name: {
     fontWeight: 'bold',
@@ -42,7 +44,7 @@ const SellerProfile = () => {
   const classes = useStyles();
   return (
     
-    <div >
+    <div>
     <Card className={classes.container}>
       <img src={profileImage} alt={"logo"} className={classes.logo} />
       <CardContent className={classes.card}>

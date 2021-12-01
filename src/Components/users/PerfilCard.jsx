@@ -14,13 +14,17 @@ import {
 const useStyles = makeStyles((theme) => ({
   offset: theme.mixins.toolbar,
   container: {
+    flexDirection: 'unset',
+    padding: '30px',
     display: "flex",
-    margin: 20,
+    margin: '30px',
     width: "90%",
+    
   },
   card: {
-    maxWidth: 300,
-    margin: 24,
+    textAlign: 'center',
+    
+    color: '#fff',
   },
 }));
 
